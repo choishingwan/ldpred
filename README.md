@@ -65,9 +65,9 @@ If you have any questions or trouble getting the method to work, please contact 
 ## Using LDpred ##
 To run LDpred, at least two steps are required:
 
-1. The first step is a data synchronization step, where two or three data sets, genotypes and summary statistics are synchronized.  This generates a HDF5 file which contains the synchronized genotypes.  This step is implemented in the  ** coord ** script.  This step requires at least one genotype file (the LD reference genotypes), where we recommend at least 1000 unrelated individuals with the same ancestry make-up as the individuals for which summary statistics datasets are obtained from.  Another genotype file can also be given if the user intends to validate the predictions using a separate set of genotypes.
+1. The first step is a data synchronization step, where two or three data sets, genotypes and summary statistics are synchronized.  This generates a HDF5 file which contains the synchronized genotypes.  This step is implemented in the  **coord** script.  This step requires at least one genotype file (the LD reference genotypes), where we recommend at least 1000 unrelated individuals with the same ancestry make-up as the individuals for which summary statistics datasets are obtained from.  Another genotype file can also be given if the user intends to validate the predictions using a separate set of genotypes.
 
-2. After generating the coordinated data file then the one can apply LDpred and run it on the synchronized dataset.  This step is implemented in ** ldpred ** script.  This step generates two files, a LD file with LD information for the given LD radius, and the re-weighted effect estimates.  The LD file enables the user to not have to generate the LD file again when trying, e.g., different values of *p* (the fraction of causal variants). However, it is re-generated if a different LD radius is given.  The other file that LDpred generates contains the LDpred-adjusted effect estimates. 
+2. After generating the coordinated data file then the one can apply LDpred and run it on the synchronized dataset.  This step is implemented in **ldpred** script.  This step generates two files, a LD file with LD information for the given LD radius, and the re-weighted effect estimates.  The LD file enables the user to not have to generate the LD file again when trying, e.g., different values of *p* (the fraction of causal variants). However, it is re-generated if a different LD radius is given.  The other file that LDpred generates contains the LDpred-adjusted effect estimates. 
 
 ## Generating individual risk scores ##
 Individual risk scores can be generated using the **validate** script.  It calculates polygenic risk scores for the individuals in the validation data if given, otherwise it treats the LD reference genotypes as validation genotypes.  A phenotype file can be provided, covariate file, as well as plink-formatted principal components file.  
@@ -75,7 +75,7 @@ Individual risk scores can be generated using the **validate** script.  It calcu
 
 
 ## LD-pruning + Thresholding ##
-In addition to the LDpred.py script, which implements the LDpred algorithm, the package also implements LD-pruning + Thresholding, as an alternative method.  This method often yields better predictions than LDpred when the LD reference panel is small.  This method is implemented in the ** pt ** script.
+In addition to the LDpred.py script, which implements the LDpred algorithm, the package also implements LD-pruning + Thresholding, as an alternative method.  This method often yields better predictions than LDpred when the LD reference panel is small.  This method is implemented in the **pt** script.
 
 
 ## Individual scripts and their usage information ##
